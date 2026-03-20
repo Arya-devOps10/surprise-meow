@@ -1,0 +1,71 @@
+/* 1. Basic Page Setup */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff0f3; /* Soft pink background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. The Main Container */
+.envelope-container {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.envelope-container:hover {
+    transform: scale(1.05); /* Slight "pop" when she hovers over it */
+}
+
+/* 3. The Cat Image */
+.cat-img {
+    width: 250px;
+    height: auto;
+    border-radius: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+/* 4. The "Hidden" Message Card */
+#message-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ff4d6d;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    z-index: 1; /* Starts behind the cat */
+    width: 180px;
+    opacity: 0; /* Fully invisible at first */
+    transition: all 0.5s ease-in-out;
+}
+
+/* 5. The "Reveal" State (Triggered by JS) */
+#message-card.reveal {
+    opacity: 1;
+    top: -40px; /* Slides the card "up" out of the cat's paws */
+    z-index: 3;  /* Brings it to the very front */
+}
+
+/* 6. Text Styling */
+#message-card p {
+    color: #ff4d6d;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.instruction {
+    margin-top: 15px;
+    color: #a38080;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
